@@ -265,7 +265,7 @@ except AttributeError:
 '''PARTE CSV'''
 
 #AJUSTE PREÇO
-'''
+
 preço_estante_virtual = trocar_caracter(preço_estante_virtual).strip()
 preço_livraria_cultura = trocar_caracter(preço_livraria_cultura).strip()
 preço_livraria_leitura = trocar_caracter(preço_livraria_leitura).strip()
@@ -280,4 +280,4 @@ nome_livraria_da_vila = trocar_caracter(nome_livraria_da_vila).strip().lower()
 
 with open('banco_csv.csv', 'a', newline='') as arquivo:
     escrever = csv.writer(arquivo)
-    escrever.writerow([nome_estante_virtual, preço_estante_virtual, nome_livraria_cultura, preço_livraria_cultura, nome_livraria_leitura, preço_livraria_leitura, nome_livraria_da_vila, preço_livraria_da_vila])'''
+    escrever.writerow([nome_estante_virtual, preço_estante_virtual, nome_livraria_cultura, preço_livraria_cultura, nome_livraria_leitura, preço_livraria_leitura, nome_livraria_da_vila, preço_livraria_da_vila])
