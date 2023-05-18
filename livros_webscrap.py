@@ -2,29 +2,6 @@ import csv
 from requests import *
 from bs4 import BeautifulSoup
 
-def testar(pesquisa, nome, preço, carrinho):
-    nome_do_livro = trocar_caracter(nome_do_livro)
-    nome = trocar_caracter(nome)
-    if nome_do_livro.lower() in nome.lower():
-        print('__________________________________________________________________________')
-
-        print(f'\n___{pesquisa}___ \n')
-
-        print(f'--nome-- \n{nome.strip()} \n \n--preço-- \n{preço} \n')
-
-        print('url:', 'www.estantevirtual.com.br' + carrinho.get('href'))
-
-    else:
-        print('__________________________________________________________________________')
-
-        print(f'\n___{pesquisa}___ \n')
-
-        print('--NÃO ENCONTRADO--')
-
-        nome = 'nao encontrado'
-
-        nome = 'nao encontrado'
-
 def trocar_caracter(nome):
 
     acentos = {'á': 'a', 'à': 'a', 'â': 'a', 'ã': 'a', 'ä': 'a', 'é': 'e', 'è': 'e', 'ê': 'e', 'ë': 'e', 'í': 'i', 'ì': 'i', 'î': 'i', 'ï': 'i', 'ó': 'o', 'ò': 'o', 'ô': 'o', 'õ': 'o', 'ö': 'o', 'ú': 'u', 'ù': 'u', 'û': 'u', 'ü': 'u', 'ç': 'c', ',': '', '"': '', "'": ""}
@@ -85,9 +62,6 @@ sopa_estante_virtual = BeautifulSoup(pagina_estante_virtual.content, 'html.parse
 #TESTAR ERRO
 
 try:
-
-    pesquisa_estante_virtual = 'ESTANTE VIRTUAL'
-
     nome_estante_virtual = sopa_estante_virtual.find('h2', {'itemprop' : 'name'}).get_text()
 
     preço_estante_virtual = sopa_estante_virtual.find('span', {'class': 'preco'}).get_text()
@@ -96,14 +70,32 @@ try:
 
     carrinho_estante_virtual = link_estante_virtual.find('a')
 
-    testar(pesquisa_estante_virtual, nome_estante_virtual, preço_estante_virtual, carrinho_estante_virtual)
+    if nome_do_livro.lower() in trocar_caracter(nome_estante_virtual.lower()):
+
+        print('__________________________________________________________________________')
+
+        print(f'\n___ESTANTE VIRTUAL___ \n')
+
+        print(f'--nome-- \n{nome_estante_virtual.strip()} \n \n--preço-- \n{preço_estante_virtual.strip()} \n')
+
+        print('url:', 'www.estantevirtual.com.br' + carrinho_estante_virtual.get('href'))
+
+    else: 
+        print('__________________________________________________________________________')
+
+        print(f'\n___ESTANTE VIRTUAL___ \n')
+
+        print('--NÃO ENCONTRADO--')
+
+        nome_estante_virtual = 'nao encontrado'
+
+        preço_estante_virtual = 'nao encontrado'
 
 except AttributeError:
 
-    
     print('__________________________________________________________________________')
 
-    print(f'\n___ESTANTE VIRTUAL ___ \n')
+    print(f'\n___ESTANTE VIRTUAL___ \n')
 
     print('--NÃO ENCONTRADO--')
 
@@ -132,13 +124,32 @@ try:
 
     carrinho_livraria_cultura = link_livraria_cultura.find('a')
 
-    testar(pesquisa_livraria_cultura, nome_livraria_cultura, preço_livraria_cultura, carrinho_livraria_cultura)
+    if nome_do_livro.lower() in trocar_caracter(nome_estante_virtual.lower()):
+
+        print('__________________________________________________________________________')
+
+        print(f'\n___LIVRARIA CULTURA___ \n')
+
+        print(f'--nome-- \n{nome_livraria_cultura.strip()} \n \n--preço-- \n{preço_livraria_cultura.strip()} \n')
+
+        print('url:', 'www.estantevirtual.com.br' + carrinho_livraria_cultura.get('href'))
+
+    else: 
+        print('__________________________________________________________________________')
+
+        print(f'\n___LIVRARIA CULTURA___ \n')
+
+        print('--NÃO ENCONTRADO--')
+
+        nome_livraria_cultura = 'nao encontrado'
+
+        preço_livraria_cultura = 'nao encontrado'
 
 except AttributeError:
 
     print('__________________________________________________________________________')
 
-    print('\n___LIVRARIA CULTURA ___ \n')
+    print('\n___LIVRARIA CULTURA___ \n')
 
     print('--NÃO ENCONTRADO--')
 
@@ -164,7 +175,26 @@ try:
 
     carrinho_livraria_leitura = link_livraria_leitura.find('a')
 
-    testar(pesquisa_livraria_leitura, nome_livraria_leitura, preço_livraria_leitura, carrinho_livraria_leitura)
+    if nome_do_livro.lower() in trocar_caracter(nome_estante_virtual.lower()):
+
+        print('__________________________________________________________________________')
+
+        print(f'\n___LIVRARIA LEITURA___ \n')
+
+        print(f'--nome-- \n{nome_livraria_leitura.strip()} \n \n--preço-- \n{preço_livraria_leitura.strip()} \n')
+
+        print('url:', 'www.estantevirtual.com.br' + carrinho_livraria_leitura.get('href'))
+
+    else: 
+        print('__________________________________________________________________________')
+
+        print(f'\n___LIVRARIA LEITURA___ \n')
+
+        print('--NÃO ENCONTRADO--')
+
+        nome_livraria_leitura = 'nao encontrado'
+
+        preço_livraria_leitura = 'nao encontrado'
 
 except AttributeError:
 
@@ -198,7 +228,25 @@ try:
 
     carrinho_livraria_da_vila = link_livraria_da_vila.find('a')
 
-    testar(pesquisa_livraria_da_vila, nome_livraria_da_vila, preço_livraria_da_vila, carrinho_livraria_da_vila)
+    if nome_do_livro.lower() in trocar_caracter(nome_estante_virtual.lower()):
+        print('__________________________________________________________________________')
+
+        print(f'\n___LIVRARIA DA VILA___ \n')
+
+        print(f'--nome-- \n{nome_livraria_da_vila.strip()} \n \n--preço-- \n{preço_livraria_da_vila.strip()} \n')
+
+        print('url:', 'www.estantevirtual.com.br' + carrinho_livraria_da_vila.get('href'))
+
+    else: 
+        print('__________________________________________________________________________')
+
+        print(f'\n___LIVRARIA LEITURA___ \n')
+
+        print('--NÃO ENCONTRADO--')
+
+        nome_livraria_da_vila = 'nao encontrado'
+
+        preço_livraria_da_vila = 'nao encontrado'
 
 except AttributeError:
 
