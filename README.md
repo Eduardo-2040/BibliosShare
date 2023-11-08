@@ -6,5 +6,4 @@ Webcrowler direcionado para leitores que gostam de economizar dinheiro. O webcro
 - Armazenar em um banco de dados csv.
 
 # Tecnologias utilizadas
-. python3
-. BeatyfulSoup
+python3 BeatyfulSoup C++
